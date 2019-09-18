@@ -6,7 +6,7 @@ import { createAppContainer } from 'react-navigation';
 import { getLightEstimationEnabled } from 'expo/build/AR';
 import { createDrawerNavigator} from 'react-navigation-drawer'
 import {TextInput} from 'react-native-paper'
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import MapView ,{ MAP_TYPES, PROVIDER_DEFAULT,UrlTile } from 'react-native-maps';
 
 class Entrar extends React.Component {
@@ -20,32 +20,35 @@ class Entrar extends React.Component {
     };
     render(){
       return (
-        <View style={estilo.principal}>
-          
-          <Text h1 bold style={estilo.titulo}>Entrar</Text>
-          <TextInput style={estilo.entrada}
-            label='Usuário'
-            value={this.state.usuario}
-            onChangeText={usuario => this.setState({ usuario })}
-          />
-          <TextInput
-            label='Senha'
-            style={estilo.entrada}
-            secureTextEntry={true}
-            value={this.state.senha}
-            onChangeText={senha => this.setState({ senha })}
-          /> 
-          
+        <KeyboardAwareScrollView style={estilo.scroll}
+        enableOnAndroid={true} extraHeight={130} extraScrollHeight={130}>
+          <View style={estilo.principal}>
+            
+            <Text h1 bold style={estilo.titulo}>Entrar</Text>
+            <TextInput style={estilo.entrada}
+              label='Usuário'
+              value={this.state.usuario}
+              onChangeText={usuario => this.setState({ usuario })}
+            />
+            <TextInput
+              label='Senha'
+              style={estilo.entrada}
+              secureTextEntry={true}
+              value={this.state.senha}
+              onChangeText={senha => this.setState({ senha })}
+            /> 
+            
             <TouchableOpacity style={estilo.botao}>
-                <Text style={estilo.botaoTexto}>Entrar</Text>
+                  <Text style={estilo.botaoTexto}>Entrar</Text>
             </TouchableOpacity>
-          
-          
+            
+            
             <TouchableOpacity style={estilo.esqsenha}>
-              <Text  style={estilo.esqsenha}>Esqueceu a Senha?</Text>
+                <Text  style={estilo.esqsenha}>Esqueceu a Senha?</Text>
             </TouchableOpacity>
-          
-        </View>
+            
+          </View>
+        </KeyboardAwareScrollView>
       );
     }
     
@@ -95,6 +98,10 @@ const estilo = StyleSheet.create({
   },
   esqsenha:{
     paddingTop:20
+  },
+  scroll:{
+    flex:1,
+    paddingTop:70
   }
 
 });
