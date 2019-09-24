@@ -102,7 +102,7 @@ class TelaInicial extends Component{
 
   const DrawerNavigator = createDrawerNavigator(
     {
-      mapa: Inicio,
+      mapa: Dashboard,
       Entrar: Entrar,
       Cadastrar: Cadastrar,
       
