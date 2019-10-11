@@ -10,7 +10,7 @@ import {TextInput} from 'react-native-paper'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
- class Cadastrar extends React.Component {
+ class AttDados extends React.Component {
     static navigationOpotions ={
       
     }
@@ -29,7 +29,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
           
           <View style={estilo.principal}>
             
-            <Text h1 bold style={estilo.titulo}>Cadastro</Text>
+            <Text h1 bold style={estilo.titulo}>Atualizar Dados</Text>
             <TextInput style={estilo.entrada}
               label='Usuário'
               value={this.state.usuario}
@@ -55,16 +55,16 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
               onChangeText={senha => this.setState({ senha })}
             /> 
             <TouchableOpacity style={estilo.botao}>
-              <Text style={estilo.botaoTexto}>Cadastrar</Text>
+              <Text style={estilo.botaoTexto}>Atualizar</Text>
             </TouchableOpacity>
-            <Text  style={estilo.esqsenha}>Cadastrando-se, você pode criar eventos no mapa, visivel a todos.</Text>
+            <Text  style={estilo.esqsenha}>Atualize sempre suas informações.</Text>
           </View>
         </KeyboardAwareScrollView>
       );
     }
     
   }
-export default Cadastrar
+export default AttDados
 const estilo = StyleSheet.create({
   principal:{
     flex: 1,

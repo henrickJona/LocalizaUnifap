@@ -1,13 +1,13 @@
 ﻿import React, { Component } from 'react';
 import {View,StyleSheet,StatusBar,Image,Dimensions} from 'react-native';
 import {Button,Container,Header,Left,Right,Icon,Text,Radio } from 'native-base';
-import MapView ,{ MAP_TYPES, PROVIDER_DEFAULT,UrlTile } from 'react-native-maps';
+import MapView ,{ MAP_TYPES, PROVIDER_DEFAULT,UrlTile, Marker } from 'react-native-maps';
 
 const { width, height } = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 22.720555;
-const LONGITUDE = 75.858633;
+const LATITUDE = 37.78825;
+const LONGITUDE = -122.4324;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
@@ -53,10 +53,19 @@ render() {
        style={{flex: 1}}
        style={styles.map}
        showsUserLocation>
+         <MapView.Marker
+            coordinate={{latitude: 37.78825,
+            longitude: -122.4324}}
+            title={"title"}
+            description={"description"}
+         />
        <UrlTile
 urlTemplate="http://a.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png"
 maximumZ={19}
 />
+
+        
+
       </MapView>
      </View>
     </Container>

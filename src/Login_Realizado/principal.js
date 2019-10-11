@@ -5,9 +5,8 @@ import {Container, Header, Content,  Left, Right } from 'native-base';
 import { createAppContainer } from 'react-navigation';
 import { getLightEstimationEnabled } from 'expo/build/AR';
 import { createDrawerNavigator} from 'react-navigation-drawer'
-import Entrar from './src/login';
-import Principal from './src/Login_Realizado/principal';
-import Cadastrar from './src/cadastrar';
+import AttDados from './AttDados';
+import AddEventos from './AddEventos';
 //import mapa from './src/mapa';
 
 import MapView ,{ MAP_TYPES, PROVIDER_DEFAULT,UrlTile,Marker } from 'react-native-maps';
@@ -20,7 +19,7 @@ const LONGITUDE = -51.0848025;
 const LATITUDE_DELTA = 0.018;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
-class Inicio extends React.Component {
+class Principal extends React.Component {
   static navigationOptions = {
     title: 'mapa',
     drawerLabel: 'Inicio',
@@ -111,10 +110,9 @@ class TelaInicial extends Component{
 
   const DrawerNavigator = createDrawerNavigator(
     {
-      mapa: Inicio,
-      Entrar: Entrar,
-      Cadastrar: Cadastrar,
-      Principal:Principal,
+      mapa: Principal,
+      AddEventos: AddEventos,
+      AttDados: AttDados,
       
     },
     {
