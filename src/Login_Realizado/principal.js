@@ -44,7 +44,7 @@ render() {
    <Container>
     
      
-     <View style={{paddingTop:50, paddingLeft:20, paddingBottom:20, paddingRight:20, flexDirection:"row", justifyContent:"space-between",alignItems:"center", backgroundColor:"#7f7fff"}}>
+     <View style={{paddingTop:50, paddingLeft:20, paddingBottom:20, paddingRight:20, flexDirection:"row", justifyContent:"space-between",alignItems:"center", backgroundColor: 'transparent'}}>
           <Icon onPress={() => this.props.navigation.openDrawer()} name="bars" size={30} color="white" />
           <TextInput placeholder="Insira sua Busca!" placeholderTextColor="#7f7fff" style={{borderColor:'#e3e3e3', borderWidth:1, width:"80%", paddingLeft:20, height:45, backgroundColor:"white"}}/>
           
@@ -95,7 +95,7 @@ class TelaInicial extends Component{
   render(){
     return (
       
-        <View style={{paddingTop:50, paddingLeft:20, paddingBottom:20, paddingRight:20, flexDirection:"row", justifyContent:"space-between",alignItems:"center", backgroundColor:"#7f7fff"}}>
+        <View style={{paddingTop:50, paddingLeft:20, paddingBottom:20, paddingRight:20, flexDirection:"row", justifyContent:"space-between",alignItems:"center", backgroundColor: 'rgba(52, 52, 52, 0.8)'}}>
           <Icon onPress={() => this.props.navigation.openDrawer()} name="bars" size={30} color="white" />
           <TextInput placeholder="Insira sua Busca!" placeholderTextColor="#CCCCFF" style={{borderColor:'#e3e3e3', borderWidth:1, width:"80%", paddingLeft:20, height:45, backgroundColor:"white"}}/>
           
