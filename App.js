@@ -11,7 +11,7 @@ import Principal from './src/Login_Realizado/principal';
 import Cadastrar from './src/cadastrar';
 import Mapa from './src/mapa';
 import TelaInformacao from './src/telaInformacao';
-
+import TelaFiltro from './src/telaFiltro';
 import {createStackNavigator} from 'react-navigation-stack';
 //import mapa from './src/mapa';
 
@@ -61,6 +61,17 @@ const NavStack = createStackNavigator({
         headerTintColor:'white'
         
   },},
+  ScreenThree: { 
+    screen: TelaFiltro,navigationOptions:{
+      title: 'Filtrar',
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#4d6273',
+      },
+      
+},
+    
+    },
 });
   
   

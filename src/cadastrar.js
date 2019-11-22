@@ -26,7 +26,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
           
         <KeyboardAwareScrollView style={estilo.scroll}
         enableOnAndroid={true} extraHeight={130} extraScrollHeight={130}>
-          
+          <Icon onPress={() => this.props.navigation.openDrawer()} name="bars" size={40} color="#4d6273" style={{paddingLeft:20,paddingTop:0}} />
           <View style={estilo.principal}>
             
             <Text h1 bold style={estilo.titulo}>Cadastro</Text>
@@ -34,11 +34,13 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
               label='Usuário'
               value={this.state.usuario}
               onChangeText={usuario => this.setState({ usuario })}
+              theme={{ colors: { primary: "#477fad" }}}
             />
             <TextInput style={estilo.entrada}
               label='E-mail'
               value={this.state.email}
               onChangeText={email => this.setState({ email })}
+              theme={{ colors: { primary: "#477fad" }}}
             />
             <TextInput
               label='Senha'
@@ -46,6 +48,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
               secureTextEntry={true}
               value={this.state.csenha}
               onChangeText={csenha => this.setState({ csenha })}
+              theme={{ colors: { primary: "#477fad" }}}
             /> 
             <TextInput
               label='Repita a Senha'
@@ -53,6 +56,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
               secureTextEntry={true}
               value={this.state.senha}
               onChangeText={senha => this.setState({ senha })}
+              theme={{ colors: { primary: "#477fad" }}}
             /> 
             <TouchableOpacity style={estilo.botao}>
               <Text style={estilo.botaoTexto}>Cadastrar</Text>
@@ -85,7 +89,7 @@ const estilo = StyleSheet.create({
     
   },
   titulo:{
-    color:'#7f7fff',
+    color:'#477fad',
     
     fontSize:32,
     paddingBottom:40
@@ -97,7 +101,7 @@ const estilo = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     width: '50%',
-    backgroundColor:'#7f7fff',
+    backgroundColor:'#477fad',
     height:40,
     
   },
@@ -113,7 +117,7 @@ const estilo = StyleSheet.create({
   },
   scroll:{
     flex:1,
-    paddingTop:70
+    paddingTop:50
   }
 
 });
