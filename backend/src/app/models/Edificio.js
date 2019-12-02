@@ -4,7 +4,6 @@ class Edificio extends Model{
     static init(sequelize){
         super.init({
             nome: DataTypes.STRING,
-            categoria_id: DataTypes.STRING,
             imagem: DataTypes.STRING,
             latitude: DataTypes.STRING,
             longitude: DataTypes.STRING,
@@ -17,6 +16,8 @@ class Edificio extends Model{
 
     static associate(models){
         this.belongsTo(models.Categoria, {foreignKey: 'categoria_id', as: 'categoria'});
+       // this.hasMany(models.Local, {foreignKey: 'edificio_id', as: 'locais'});
+
 
     }
 
