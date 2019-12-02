@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, FlatList, ScrollView, TouchableOpacity, Dimensions, Keyboard, TouchableWithoutFeedback, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList, ScrollView, TouchableOpacity, Dimensions, Keyboard, TouchableWithoutFeedback, TouchableHighlight, Image } from 'react-native';
 import {Container,Header,Left,Right,Radio } from 'native-base';
 import MapView ,{ MAP_TYPES, PROVIDER_DEFAULT,UrlTile, Marker } from 'react-native-maps';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -19,7 +19,13 @@ const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 class Mapa extends React.Component {
   static navigationOptions = {
     title: 'mapa',
-    drawerLabel: 'Inicio',
+    drawerLabel: 'Mapa',
+    drawerIcon: (
+      <Image
+        style={{ width: 24, height: 24 }}
+        source={require("./mapIcon.png")}
+      />
+    ),
    
 };
 constructor(props) {
@@ -131,10 +137,10 @@ maximumZ={19}
               
                 
             <Animatable.View animation='fadeInRight' style={{flexDirection:"row", justifyContent:"space-between",}}>
-                <TextInput  autoFocus={true} placeholder="Insira sua Busca!" placeholderTextColor="#4d6273" style={{borderColor:'#e3e3e3', borderWidth:1, width:"85%", paddingLeft:20, height:40, backgroundColor:"white", shadowColor: '#000',
+                <TextInput  autoFocus={true} placeholder="Insira sua Busca!" placeholderTextColor="#4d6273" style={{borderColor:'#e3e3e3', borderWidth:1, width:"80%", paddingLeft:15, height:40, backgroundColor:"white", shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
-    shadowRadius: 2,}}/>
+    shadowRadius: 2,}}/><Icon name='filter' size={40}  color="#4d6273" onPress={() => navigate('ScreenThree')}/>
             </Animatable.View>
             
                 
